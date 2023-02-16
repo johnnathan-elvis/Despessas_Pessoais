@@ -6,6 +6,7 @@ class ChartBar extends StatelessWidget {
   final double percentage;
 
   const ChartBar({
+    super.key,
     required this.label,
     required this.value,
     required this.percentage,
@@ -15,8 +16,11 @@ class ChartBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        FittedBox(
-          child: Text('${value.toStringAsFixed(2)}'),
+        SizedBox(
+          height: 20,
+          child: FittedBox(
+            child: Text(value.toStringAsFixed(2)),
+          ),
         ),
         const SizedBox(
           height: 5,
